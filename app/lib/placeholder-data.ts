@@ -1,0 +1,42 @@
+const expenses = [
+    {
+        id: '1',
+        name: 'Groceries',
+        amount: 100,
+        date: '2021-01-01',
+        category: 'Food',
+        userId: '1',
+    },
+    {
+        id: '2',
+        name: 'Rent',
+        amount: 500,
+        date: '2021-01-01',
+        category: 'Housing',
+        userId: '2',
+    },
+    {
+        id: '3',
+        name: 'Utilities',
+        amount: 200,
+        date: '2021-01-01',
+        category: 'Housing',
+        userId: '3',
+    },
+    {
+        id: '4',
+        name: 'Transportation',
+        amount: 150,
+        date: '2021-01-01',
+        category: 'Transportation',
+        userId: '4',
+    },
+    {
+        id: '5',
+        name: 'Movie',
+        amount: 300,
+        date: '2021-01-01',
+        category: 'Entertainment',
+        userId: '5',
+    },
+];

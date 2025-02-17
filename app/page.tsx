@@ -1,9 +1,12 @@
 import Image from "next/image";
+import AuthContainer from "@/components/AuthContainer";
 
 export default function Home() {
-  return (
+  return(
     <div>
-      <h1> Personal finance tracker </h1>
+      <AuthContainer/>
+
     </div>
-  );
+
+  )
 }

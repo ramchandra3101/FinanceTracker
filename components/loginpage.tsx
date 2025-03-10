@@ -4,6 +4,9 @@ import {Card, CardContent, CardHeader, CardDescription, CardTitle, CardFooter} f
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {Label} from "@/components/ui/label";
+import Image from "next/image";
+import google from "@/public/logos/google.svg";
+import facebook from "@/public/logos/facebook.svg";
 
 interface LoginFormData {
     email: string;
@@ -13,7 +16,7 @@ interface LoginPageProps {
     onSignUpClick: () => void;
 }
 
-const LoginPage: React.FC<LoginPageProps> = ({onSignUpClick}) => {
+const LoginPage: React.FC<LoginPageProps> = () => {
     const [formData, setFormData] = useState<LoginFormData>({
         email: '',
         password: ''
@@ -71,6 +74,7 @@ const LoginPage: React.FC<LoginPageProps> = ({onSignUpClick}) => {
                                     className="w-full"
                                 />
                             </div>
+                            
                             <div className="text-right">
                                 <Button
                                     variant="link"
@@ -85,6 +89,28 @@ const LoginPage: React.FC<LoginPageProps> = ({onSignUpClick}) => {
                             <Button type="submit" className="w-full">
                             Sign In
                             </Button>
+                                <div className="grid grid-cols-2 gap-4 w-full">
+                                    <Button 
+                                    type="button" 
+                                    variant="outline"
+                                    onClick={() => console.log('Google Login clicked')}
+                                    className="w-full"
+                                    >
+                                    <Image src={google} alt="Google" width={16} height={16} className = "mr-2" />
+                                    Login with Google
+                                    </Button>
+                                
+                                    <Button 
+                                    type="button" 
+                                    variant="outline"
+                                    onClick={() => console.log('Facebook Login clicked')}
+                                    className="w-full"
+                                    >
+                                    <Image src={facebook} alt="Facebook" width={16} height={16} className = "mr-2" />
+                                   Login with Facebook
+                                    </Button>
+                                </div>
+                            
                             <div className="text-center text-sm text-gray-600">
                             Not an existing user?{' '}
                             <Button

@@ -66,7 +66,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://10.0.0.241:8000/api/auth/SignIn', {
+      const response = await fetch('http://localhost:8000/api/auth/SignIn', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

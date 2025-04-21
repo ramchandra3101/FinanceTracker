@@ -102,7 +102,7 @@ const SignUp = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://10.0.0.241:8000/api/auth/SignUp', {
+      const response = await fetch('http://localhost:8000/api/auth/SignUp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

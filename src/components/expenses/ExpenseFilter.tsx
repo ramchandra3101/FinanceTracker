@@ -2,8 +2,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useCategories } from '@/hooks/useCategories';
-import { DatePicker } from '@/components/ui/DatePicker';
 import { Select } from '@/components/ui/Select';
 import { ExpenseButton } from '@/components/ui/ExpenseButton';
 

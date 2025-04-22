@@ -13,7 +13,7 @@ export const Input: React.FC<InputProps> = ({ error, className = '', ...props })
           error 
             ? 'border-red-300 focus:border-red-500 focus:ring-red-500' 
             : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500'
-        } shadow-sm sm:text-sm ${className}`}
+        } shadow-sm sm:text-sm  text-gray-900 ${className}`}
         {...props}
       />
       {error && (

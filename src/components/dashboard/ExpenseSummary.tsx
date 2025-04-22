@@ -62,7 +62,7 @@ const ExpenseSummary: React.FC<ExpenseSummaryProps> = ({ month }) => {
   
   return (
     <div>
-      <h3 className="text-lg font-medium mb-4">{monthName} Summary</h3>
+      <h3 className="text-lg font-medium  text-gray-900 mb-4">{monthName} Summary</h3>
       
       {isLoading ? (
         <div className="flex justify-center py-4">
@@ -72,7 +72,7 @@ const ExpenseSummary: React.FC<ExpenseSummaryProps> = ({ month }) => {
         <div className="space-y-4">
           <div>
             <p className="text-gray-500 text-sm">Total Expenses</p>
-            <p className="text-2xl font-bold">{formatCurrency(totalAmount)}</p>
+            <p className="text-2xl font-bold text-gray-900">{formatCurrency(totalAmount)}</p>
             
             <div className={`text-sm flex items-center mt-1 ${amountChange > 0 ? 'text-red-600' : 'text-green-600'}`}>
               {amountChange !== 0 && (
@@ -92,7 +92,7 @@ const ExpenseSummary: React.FC<ExpenseSummaryProps> = ({ month }) => {
           
           <div>
             <p className="text-gray-500 text-sm">Number of Transactions</p>
-            <p className="text-xl font-semibold">{expenses.length}</p>
+            <p className="text-xl  text-gray-900 font-semibold">{expenses.length}</p>
             
             <div className={`text-sm flex items-center mt-1 ${expenses.length > previousMonthData.count ? 'text-yellow-600' : expenses.length < previousMonthData.count ? 'text-blue-600' : 'text-gray-600'}`}>
               {expenses.length !== previousMonthData.count && (
@@ -113,7 +113,7 @@ const ExpenseSummary: React.FC<ExpenseSummaryProps> = ({ month }) => {
           {expenses.length > 0 && (
             <div>
               <p className="text-gray-500 text-sm">Average Transaction</p>
-              <p className="text-lg font-semibold">
+              <p className="text-lg font-semibold  text-gray-900">
                 {formatCurrency(totalAmount / expenses.length)}
               </p>
             </div>

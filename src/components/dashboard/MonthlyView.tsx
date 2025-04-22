@@ -46,7 +46,7 @@ const MonthlyView: React.FC<MonthlyViewProps> = ({ month }) => {
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold">{monthName} {year} Expenses</h2>
+        <h2 className="text-xl  text-gray-900 font-semibold">{monthName} {year} Expenses</h2>
         <ExpenseButton onClick={handleAddExpense}>Add Expense</ExpenseButton>
       </div>
       

@@ -98,14 +98,16 @@ export async function fetchCategories(filters: Filters = {}): Promise<Category[]
     }
   });
   
-  const query = queryParams.toString() ? `?${queryParams.toString()}` : '';
+  const query = queryParams.toString() ? `?${queryParams}` : '';
   return fetchWithAuth<Category[]>(`/categories/getCategories${query}`);
 }
 
 export async function createCategory(categoryData: Category): Promise<Category> {
+  console.log('categoryData', categoryData)
   return fetchWithAuth<Category>('/categories/createCategory', {
     method: 'POST',
     body: JSON.stringify(categoryData),
+    
   });
 }
 
@@ -124,15 +126,15 @@ export async function deleteCategory(id: string): Promise<void> {
 
 // Payment Method APIs
 export async function fetchPaymentMethods(): Promise<PaymentMethod[]> {
-  return fetchWithAuth<PaymentMethod[]>('/payment-methods');
+  return fetchWithAuth<PaymentMethod[]>('/payment-methods/getpaymethods');
 }
 
 export async function fetchPaymentMethodById(id: string): Promise<PaymentMethod> {
-  return fetchWithAuth<PaymentMethod>(`/payment-methods/${id}`);
+  return fetchWithAuth<PaymentMethod>(`/payment-methods/getpaymethods/${id}`);
 }
 
 export async function createPaymentMethod(paymentMethodData: PaymentMethod): Promise<PaymentMethod> {
-  return fetchWithAuth<PaymentMethod>('/payment-methods', {
+  return fetchWithAuth<PaymentMethod>('/payment-methods/createpaymentMethod', {
     method: 'POST',
     body: JSON.stringify(paymentMethodData),
   });

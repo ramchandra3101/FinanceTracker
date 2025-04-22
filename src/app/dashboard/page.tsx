@@ -72,6 +72,9 @@ export default function Dashboard() {
                 Welcome, {user.first_name}
               </span>
             )}
+            <ExpenseButton onClick={() => router.push('/settings')} variant="secondary" className="mr-4">
+              Settings
+            </ExpenseButton>
             
             <ExpenseButton onClick={handleLogout} variant="secondary">
               Logout

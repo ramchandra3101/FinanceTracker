@@ -38,15 +38,15 @@ const ExpenseList: React.FC<ExpenseListProps> = ({ expenses, onExpenseUpdated })
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Payment Method</th>
-              <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+              <th className="px-6 py-3 text-left  text-xs font-semibold text-gray-900 uppercase tracking-wider">Date</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-900 uppercase tracking-wider">Category</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-900 uppercase tracking-wider">Description</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-900 uppercase tracking-wider">Amount</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-900 uppercase tracking-wider">Payment Method</th>
+              <th className="px-6 py-3 text-right text-xs font-semibold text-gray-900 uppercase tracking-wider">Actions</th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white divide-y  text-gray-900 divide-gray-200">
             {expenses.map((expense) => (
               <ExpenseItem 
                 key={expense.expense_id} 
@@ -58,8 +58,8 @@ const ExpenseList: React.FC<ExpenseListProps> = ({ expenses, onExpenseUpdated })
           </tbody>
           <tfoot>
             <tr>
-              <td colSpan={3} className="px-6 py-4 text-right font-medium">Total:</td>
-              <td className="px-6 py-4 font-bold">
+              <td colSpan={3} className="px-6 py-4 text-right  text-gray-900 font-medium">Total:</td>
+              <td className="px-6 py-4  text-gray-900 font-bold">
                 {formatCurrency(expenses.reduce((sum, expense) => sum + expense.amount, 0))}
               </td>
               <td colSpan={2}></td>

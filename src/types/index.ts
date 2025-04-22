@@ -10,7 +10,7 @@ export interface User {
   }
   
   export interface Category {
-    category_id: number;
+    category_id: string;
     user_id: number;
     name: string;
     icon?: string;
@@ -20,7 +20,7 @@ export interface User {
   }
   
   export interface PaymentMethod {
-    payment_method_id: number;
+    payment_method_id: string;
     user_id: number;
     name: string;
     type: string;

@@ -10,7 +10,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({ error, className = '', .
     <div className="w-full">
       <input
         type="date"
-        className={`mt-1 block w-full rounded-md ${
+        className={`mt-1 block w-full rounded-md  text-gray-900 ${
           error 
             ? 'border-red-300 focus:border-red-500 focus:ring-red-500' 
             : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500'

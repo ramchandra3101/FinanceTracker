@@ -79,7 +79,7 @@ const CategoryDistribution: React.FC<CategoryDistributionProps> = ({ month }) =>
 
   return (
     <div>
-      <h3 className="text-lg font-medium mb-4">Spending by Category</h3>
+      <h3 className="text-lg text-amber-950 font-extrabold mb-4">Spending by Category</h3>
 
       {isLoading ? (
         <div className="flex justify-center py-4">
@@ -116,9 +116,9 @@ const CategoryDistribution: React.FC<CategoryDistributionProps> = ({ month }) =>
             <table className="min-w-full">
               <thead>
                 <tr>
-                  <th className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-                  <th className="text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
-                  <th className="text-right text-xs font-medium text-gray-500 uppercase tracking-wider">%</th>
+                  <th className="text-left text-xs font-extrabold text-gray-500 uppercase tracking-wider">Category</th>
+                  <th className="text-right text-xs font-extrabold text-gray-500 uppercase tracking-wider">Amount</th>
+                  <th className="text-right text-xs font-extrabold text-gray-500 uppercase tracking-wider">%</th>
                 </tr>
               </thead>
               <tbody>
@@ -127,9 +127,9 @@ const CategoryDistribution: React.FC<CategoryDistributionProps> = ({ month }) =>
                   const percentage = (category.amount / totalAmount) * 100;
 
                   return (
-                    <tr key={index}>
-                      <td className="py-2">
-                        <div className="flex items-center">
+                    <tr className="text-black font-bold"key={index}>
+                      <td className="py-2 ">
+                        <div className="flex  items-center">
                           <span
                             className="w-3 h-3 rounded-full mr-2"
                             style={{ backgroundColor: category.color }}

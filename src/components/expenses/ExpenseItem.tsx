@@ -3,7 +3,6 @@
 
 import { useState } from 'react';
 import { ExpenseButton } from '@/components/ui/ExpenseButton';
-import { Dropdown } from '@/components/ui/Dropdown';
 import { Modal } from '@/components/ui/Modal';
 import { formatCurrency, formatDate } from '@/services/formatters';
 import { deleteExpense } from '@/services/api';
@@ -18,6 +17,7 @@ interface ExpenseItemProps {
 const ExpenseItem: React.FC<ExpenseItemProps> = ({ expense, onEdit, onDelete }) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [isConfirmDeleteOpen, setIsConfirmDeleteOpen] = useState(false);
+
   
   const handleDeleteClick = () => {
     setIsConfirmDeleteOpen(true);
@@ -68,7 +68,7 @@ const ExpenseItem: React.FC<ExpenseItemProps> = ({ expense, onEdit, onDelete }) 
         {formatCurrency(expense.amount)}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-        {expense.payment_method?.name || '-'}
+        {expense.Expense_payment_method?.name || '-'}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
         <div className="flex justify-end">

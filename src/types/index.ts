@@ -28,10 +28,10 @@ export interface User {
   }
   
   export interface Expense {
-    expense_id: number;
+    expense_id: string;
     user_id: number;
-    category: number;
-    payment_method_id: number;
+    category_id: string;
+    payment_method_id: string;
     amount: number;
     description?: string;
     expense_date: string;
@@ -43,7 +43,7 @@ export interface User {
     
     // Relations - populated when fetched
     expense_category?: Category;
-    payment_method?: PaymentMethod;
+    Expense_payment_method?: PaymentMethod;
   }
   
   export interface ExpenseFilters {

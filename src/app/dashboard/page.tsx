@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import MonthlyView from '@/components/dashboard/MonthlyView';
 import ExpenseSummary from '@/components/dashboard/ExpenseSummary';
+import ReceiptScannerButton from '@/components/dashboard/ScannerButton';
 import CategoryDistribution from '@/components/dashboard/CategoryDistribution';
 import ExpenseFilter from '@/components/expenses/ExpenseFilter';
 import Card from '@/components/ui/Card';
@@ -21,6 +22,7 @@ export default function Dashboard() {
   const [user, setUser] = useState<User | null>(null);
   const [selectedMonth, setSelectedMonth] = useState(new Date());
   const [isLoading, setIsLoading] = useState(true);
+  const [refreshDashboard, setRefreshDashboard] = useState(0);
   
   useEffect(() => {
     const checkAuth = async () => {
@@ -51,6 +53,9 @@ export default function Dashboard() {
     localStorage.removeItem('user');
     router.push('/login');
   };
+  const refreshExpenseData = () => {
+    setRefreshDashboard(prev => prev + 1);
+  };
   
   if (isLoading) {
     return (
@@ -72,6 +77,7 @@ export default function Dashboard() {
                 Welcome, {user.first_name}
               </span>
             )}
+            <ReceiptScannerButton onExpenseAdded={refreshExpenseData} />
             <ExpenseButton onClick={() => router.push('/settings')} variant="secondary" className="mr-4">
               Settings
             </ExpenseButton>

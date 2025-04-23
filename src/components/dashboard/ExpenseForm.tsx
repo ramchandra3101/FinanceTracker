@@ -13,7 +13,7 @@ import { formatDateForInput } from '@/services/formatters';
 import { Expense } from '@/types';
 
 interface ExpenseFormProps {
-  expenseId?: number;
+  expenseId?: string;
   initialValues?: Partial<Expense>;
   initialDate?: Date;
   onSuccess: () => void;
@@ -26,7 +26,7 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({
   onSuccess 
 }) => {
   const [formData, setFormData] = useState({
-    category: initialValues?.category || '',
+    category_id: initialValues?.category_id || '',
     payment_method_id: initialValues?.payment_method_id || '',
     amount: initialValues?.amount?.toString() || '',
     description: initialValues?.description || '',
@@ -66,7 +66,7 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     
-    if (!formData.category) {
+    if (!formData.category_id) {
       newErrors.category = 'Category is required';
     }
     
@@ -100,22 +100,23 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({
       const expenseData = {
         ...formData,
         amount: parseFloat(formData.amount),
-        category: parseInt(formData.category as string),
-        payment_method_id: parseInt(formData.payment_method_id as string),
+        
       };
+
+      
       
       if (expenseId) {
         await updateExpense(expenseId.toString(), {
           ...expenseData,
           name: formData.description || 'Unnamed Expense',
-          categoryId: parseInt(formData.category as string).toString(),
+          categoryId:formData.category_id,
           date: formData.expense_date,
         });
       } else {
         await createExpense({
           ...expenseData,
           name: formData.description || 'Unnamed Expense',
-          categoryId: formData.category.toString(),
+          categoryId: formData.category_id,
           date: formData.expense_date,
         });
       }
@@ -145,11 +146,11 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({
           Category *
         </label>
         <Select
-          id="category"
-          name="category"
-          value={formData.category}
+          id="category_id"
+          name="category_id"
+          value={formData.category_id}
           onChange={handleChange}
-          error={errors.category}
+          error={errors.category_id}
           disabled={categoriesLoading}
         >
           <option value="">Select Category</option>

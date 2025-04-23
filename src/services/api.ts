@@ -69,7 +69,8 @@ export async function fetchExpenses(filters: Filters = {}): Promise<Expense[]> {
 }
 
 export async function createExpense(expenseData: Expense): Promise<Expense> {
-  return fetchWithAuth<Expense>('/expenses', {
+  console.log('expenseData', expenseData)
+  return fetchWithAuth<Expense>('/expenses/create', {
     method: 'POST',
     body: JSON.stringify(expenseData),
   });
@@ -103,7 +104,7 @@ export async function fetchCategories(filters: Filters = {}): Promise<Category[]
 }
 
 export async function createCategory(categoryData: Category): Promise<Category> {
-  console.log('categoryData', categoryData)
+
   return fetchWithAuth<Category>('/categories/createCategory', {
     method: 'POST',
     body: JSON.stringify(categoryData),

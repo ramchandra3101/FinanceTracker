@@ -31,7 +31,7 @@ const ExpenseSummary: React.FC<ExpenseSummaryProps> = ({ month }) => {
     
     const fetchPreviousMonthData = async () => {
       try {
-        const response = await fetch(`/api/expenses?start_date=${previousMonthStart.toISOString().split('T')[0]}&end_date=${previousMonthEnd.toISOString().split('T')[0]}`, {
+        const response = await fetch(`http://localhost:8000/api/expenses?start_date=${previousMonthStart.toISOString().split('T')[0]}&end_date=${previousMonthEnd.toISOString().split('T')[0]}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }

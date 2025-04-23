@@ -73,9 +73,9 @@ export const calculateMonthlyStats = (expenses: Expense[]): MonthlyStats => {
 
   // Find most common category
   const categoryCounts = expenses.reduce((counts: Record<string, number>, expense: Expense) => {
-    const categoryId = expense.category;
-    if (categoryId) {
-      counts[categoryId] = (counts[categoryId] || 0) + 1;
+    const category_id = expense.category_id;
+    if (category_id) {
+      counts[category_id] = (counts[category_id] || 0) + 1;
     }
     return counts;
   }, {});
@@ -83,9 +83,9 @@ export const calculateMonthlyStats = (expenses: Expense[]): MonthlyStats => {
   let mostCommonCategoryId: string | null = null;
   let maxCount = 0;
 
-  Object.entries(categoryCounts).forEach(([categoryId, count]) => {
+  Object.entries(categoryCounts).forEach(([category_id, count]) => {
     if (count > maxCount) {
-      mostCommonCategoryId = categoryId;
+      mostCommonCategoryId = category_id;
       maxCount = count;
     }
   });

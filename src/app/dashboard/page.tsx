@@ -10,6 +10,7 @@ import CategoryDistribution from '@/components/dashboard/CategoryDistribution';
 import ExpenseFilter from '@/components/expenses/ExpenseFilter';
 import Card from '@/components/ui/Card';
 import { ExpenseButton } from '@/components/ui/ExpenseButton';
+import MaxChatbot from '@/components/dashboard/MaxChatbot';
 import { fetchUser } from '@/services/auth';
 
 export default function Dashboard() {
@@ -78,6 +79,7 @@ export default function Dashboard() {
               </span>
             )}
             <ReceiptScannerButton onExpenseAdded={refreshExpenseData} />
+            <MaxChatbot />
             <ExpenseButton onClick={() => router.push('/settings')} variant="secondary" className="mr-4">
               Settings
             </ExpenseButton>

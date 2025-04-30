@@ -56,7 +56,7 @@ const CategoryList: React.FC<CategoryListProps> = ({
                 )}
                 <span 
                   className="px-2 py-1 rounded-md" 
-                  style={{ backgroundColor: category.color, opacity: 0.2 }}
+                  style={{ backgroundColor: category.color, fontSize: '2rem' }}
                 >
                   {category.name}
                 </span>

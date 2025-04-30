@@ -97,7 +97,7 @@ Make sure to set up and run the backend before using the frontend features.
 
 Watch the Expense Tracker in action:
 
-[![Demo Video](public/readmeImages/Demo.mov)](public/readmeImages/Demo.mov)
+[![Demo Video](public/readmeImages/Demo.mp4)](public/readmeImages/Demo.mp4)
 
 ---
 
